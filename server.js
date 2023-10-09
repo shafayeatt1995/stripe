@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 // This is your test secret API key.
-const stripe = require("stripe")('sk_test_51IJxbkCeGFAp65PdJ0Ajzz66Ww012SsjHGYEFTmyxbQFGQhf2e386lon6b326qH2RgzEfY55RiDCpcwqV5lS70wC00hMDTx7Q7');
+const stripe = require("stripe")(
+  "sk_test_51IJxbkCeGFAp65PdJ0Ajzz66Ww012SsjHGYEFTmyxbQFGQhf2e386lon6b326qH2RgzEfY55RiDCpcwqV5lS70wC00hMDTx7Q7"
+);
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -31,5 +33,4 @@ app.post("/create-payment-intent", async (req, res) => {
   });
 });
 
-
-app.listen(4242, () => console.log("Node server listening on port 4242!"));
+app.listen(80, () => console.log("Node server listening on port 4242!"));
